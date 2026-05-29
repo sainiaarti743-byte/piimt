@@ -1,0 +1,984 @@
+/* ==========================================================================
+   1. GLOBAL RESET & PERFECT HORIZONTAL SCROLL FIX
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent media elements from breaking layout boundaries */
+img,
+video,
+iframe,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Standard Bounding Elements for Center Content */
+section,
+main {
+    width: 100%;
+    max-width: 100%;
+    padding: 60px 0;
+    overflow-x: clip !important;
+    /* Modern browser standard to lock inner leakage */
+    position: relative;
+}
+
+/* ==========================================================================
+   2. BOOTSTRAP GRID STABILIZATION
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* Safeguard for rows used directly outside a container */
+section>.row,
+main>.row,
+.container-fluid>.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* ==========================================================================
+   3. TOPBAR
+   ========================================================================== */
+.topbar {
+    background-color: #014351;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1031;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.topbar a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 6px;
+    color: #fff;
+}
+
+.divider {
+    margin: 0 6px;
+    color: #ccc;
+}
+
+/* ==========================================================================
+   4. NAVBAR
+   ========================================================================== */
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #f59e0b !important;
+}
+
+.search-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.search-dropdown {
+  width: 280px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    background: #fff;
+    position: fixed;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    height: 70px;
+    width: auto;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: #eb7314;
+}
+
+.search-box {
+    border: 2px solid #000;
+    padding: 4px 8px;
+}
+
+
+/* डेस्कटॉप स्क्रीन (बड़ी स्क्रीन) के लिए नियम */
+@media (min-width: 992px) {
+    #searchDropdownMenu {
+        display: none !important; /* शुरुआत में छुपा रहेगा */
+    }
+    /* जब सर्च आइकॉन पर क्लिक होगा तब शो होगा */
+    .show > #searchDropdownMenu {
+        display: block !important;
+    }
+}
+
+/* मोबाइल स्क्रीन के लिए नियम */
+@media (max-width: 991px) {
+    #searchDropdownMenu {
+        display: block !important; /* मोबाइल मेनू के अंदर हमेशा खुला दिखेगा */
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+    }
+}
+
+
+
+/* --- Modern Navbar Underline Animation --- */
+
+/* Sabhi desktop links ke liye transitions */
+/* ==========================================================================
+   HEADER NAVBAR UNDERLINE HOVER ANIMATION (LIVE PRODUCTION FIXED)
+   ========================================================================== */
+
+/* Links ke liye positioning base */
+.navbar-nav .nav-item .nav-link {
+    position: relative !important;
+    padding-bottom: 8px !important; /* Text aur line ke beech perfect gap */
+    transition: color 0.3s ease-in-out !important;
+}
+
+/* Base Line Design (By default hidden) */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item .nav-link::after {
+        content: '' !important;
+        position: absolute !important;
+        width: 0 !important;
+        height: 3px !important;               /* Line ki thickness */
+        bottom: 0 !important;
+        left: 8px !important;                 /* Side gap */
+        background-color: #0d6efd !important; /* Bootstrap Primary Blue */
+        border-radius: 5px !important;
+        transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* Smooth animation */
+    }
+
+    /* 1. HOVER EFFECT: Mouse aane par line expand hogi */
+    .navbar-nav .nav-item .nav-link:hover::after {
+        width: 80% !important;
+    }
+
+    /* 2. ACTIVE PAGE EFFECT: Jis page par hain wahan hamesha dikhegi */
+    .navbar-nav .nav-item .nav-link.active::after {
+        width: 80% !important;
+        background-color: #0d6efd !important;
+    }
+}
+
+/* Dropdown arrow settings fix karne ke liye */
+.navbar-nav .dropdown-toggle::after {
+    margin-left: 0.3em !important;
+    vertical-align: 0.255em !important;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (Sidebar Left-Border Style)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item .nav-link {
+        padding-left: 12px !important;
+        border-left: 3px solid transparent !important; /* Smooth shifting ke liye default transparent border */
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Mobile hover & active par stylish left border indicator */
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item .nav-link.active {
+        border-left: 3px solid #0d6efd !important;
+        background-color: rgba(13, 110, 253, 0.05) !important;
+        color: #0d6efd !important;
+    }
+    
+    /* Mobile par niche wali extra image line hatane ke liye wrapper override */
+    .navbar-nav .nav-item .nav-link::after {
+        display: none !important;
+    }
+}
+
+/* .transition {
+    transition: all 0.3s ease-in-out;
+}
+.hover-white:hover {
+    color: #ffffff !important;
+}
+.hover-primary:hover {
+    color: #0d6efd !important;
+}
+.navbar-nav .nav-link {
+    position: relative;
+}
+@media (min-width: 992px) {
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 8px;
+        background-color: #0d6efd;
+        transition: width 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+        width: 80%;
+    }
+} */
+
+
+/* --- WhatsApp Floating Button Style --- */
+/* --- WhatsApp Floating Button Style (Bottom Right) --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;      /* Niche se gap */
+    right: 30px;       /* --- AB YEH RIGHT SIDE KONE MEIN SHIFT HO GAYA --- */
+    background-color: #25d366; /* WhatsApp Green Color */
+    color: #fff !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;    /* Sabhi elements ke upar dikhega */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    background-color: #20ba5a;
+}
+
+/* Icons styling inside center */
+.whatsapp-float .bi-whatsapp {
+    line-height: 0;
+}
+
+/* Mobile responsive screen adjustments */
+@media (max-width: 767px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;    /* Mobile me bhi right side hi rahega */
+        font-size: 26px;
+    }
+}
+/* ==========================================================================
+   5. HERO CAROUSEL
+   ========================================================================== */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 80vh;
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 15px;
+    z-index: 2;
+    text-align: left;
+    right: auto;
+    bottom: auto;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 850px;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+    color: #fff;
+    max-width: 700px;
+}
+
+/* ==========================================================================
+   6. COURSE SECTION
+   ========================================================================== */
+.heading h2 {
+    color: #333;
+}
+
+.heading h3 {
+    color: #606060;
+    font-size: 18px;
+}
+
+.profile-cover {
+    position: relative;
+    max-width: 100%;
+}
+
+.profile-thumbnail {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.profile-thumbnail img {
+    max-width: 80px;
+    border: 2px solid #fff;
+    margin: 0 auto;
+}
+
+.profile-thumbnail h3 {
+    font-size: 14px;
+}
+
+.card-body1 {
+    position: relative;
+}
+
+.seprator {
+    position: relative;
+}
+
+.seprator::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    top: 1px;
+    left: 0;
+}
+
+.seprator::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #ffb606;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.free {
+    color: #00d637;
+    font-weight: 600;
+}
+
+.course-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-heading .heading h3 {
+    color: #ef7512;
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* ==========================================================================
+   7. BUTTONS & UTILITIES
+   ========================================================================== */
+.view-all {
+    display: flex;
+    justify-content: center;
+}
+
+.view-all a {
+    text-decoration: none;
+    color: #fff;
+    background: #ee7315;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.view-all a:hover {
+    background: #014351;
+}
+
+.yellow {
+    background: #ea9926;
+}
+
+.blue {
+    background: #0b777a;
+}
+
+.red {
+    background: #9879b5;
+}
+
+.purple {
+    background: #ff305c;
+}
+
+.bg-blue {
+    background: #014351;
+}
+
+/* ==========================================================================
+   8. LEARNING SECTION
+   ========================================================================== */
+.learning-skill {
+    background-color: #014351;
+}
+
+.learning-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.icon-right {
+    margin-left: 15px;
+}
+
+.learning-icon h6 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.course-category {
+    background: url(../image/worn-dots.png);
+    background-size: auto;
+}
+
+.course-category .icon,
+.course-category .icon1,
+.course-category .icon2,
+.course-category .icon3 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 22px;
+    font-size: 40px;
+}
+
+.course-category .icon {
+    background-color: #27bd90;
+    border: 1px dashed #32c196;
+}
+
+.course-category .icon1 {
+    background-color: #feaa2e;
+    border: 1px dashed #ffb43b;
+}
+
+.course-category .icon2 {
+    background-color: #34bdad;
+    border: 1px dashed #3ac4b7;
+}
+
+.course-category .icon3 {
+    background-color: #5074fe;
+    border: 1px dashed #5c7dff;
+}
+
+/* ==========================================================================
+   9. REGISTER SECTION & COUNTDOWN
+   ========================================================================== */
+.register {
+    position: relative;
+    background: url('../image/registerd-bg.jpg') center/cover no-repeat;
+    padding: 80px 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.register-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.register-content {
+    position: relative;
+    z-index: 2;
+}
+
+.thim-register-now-form {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+    /* Lock internal decorative shapes inside form bounds */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.thim-register-now-form .title {
+    position: relative;
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.thim-register-now-form .title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 350px;
+    background: #ffb606;
+    border-radius: 0 0 50% 50%;
+    z-index: -1;
+}
+
+.form-box {
+    padding: 25px;
+    background: #fff;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.submit {
+    width: 100%;
+    border: none;
+    background: #333;
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #ef7512;
+}
+
+#countdown ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+#countdown li {
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   10. TESTIMONIALS (SLIDER ELEMENT SAFETY)
+   ========================================================================== */
+.testimonials {
+    background: #faf8f9;
+    overflow: hidden;
+}
+
+.testimonials .item {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    margin: 10px;
+    max-width: 100%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.information {
+    padding-left: 15px;
+}
+
+.testimonials .testi .item .profile .information p {
+    font-size: 18px;
+    margin: 0;
+    color: #000;
+    font-weight: 700;
+}
+
+.testimonials .testi .item .profile .information span {
+    color: #ef7512;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   11. ABOUT / INNER PAGES
+   ========================================================================== */
+.about-us-meet,
+.franchise-page,
+.contact-page,
+.training-page,
+.about-us,
+.login-page,
+.registerd-page,
+.terms-page-html {
+    margin-top: 140px;
+}
+
+.about-us-meet img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.about-us-meet p {
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+.multi-column-list {
+    columns: 3;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.franchise-page-box {
+    color: #333;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   12. LOGIN / REGISTER PAGE CARDS
+   ========================================================================== */
+.register-card,
+.login-card {
+    background: linear-gradient(135deg, #04728d, #074550);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    color: #fff;
+    margin: auto;
+}
+
+.registerd-page,
+.login-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+footer {
+    background: #014351;
+    color: #fff;
+    padding-top: 60px;
+    overflow: hidden;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #5b6366;
+}
+
+footer ul li:last-child {
+    border-bottom: none;
+}
+
+footer h5 {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.table_working_hours tr {
+    border-bottom: 1px dashed #e1e2e4;
+}
+
+.table_working_hours td {
+    padding: 12px 0;
+    color: #fff;
+}
+
+.day_value {
+    text-align: right;
+}
+
+/* ==========================================================================
+   14. MOBILE RESPONSIVE ADAPTABILITY
+   ========================================================================== */
+@media (max-width: 991px) {
+    .topbar {
+        position: relative;
+    }
+
+    .navbar {
+        position: relative;
+        top: 0;
+    }
+
+    .about-us-meet,
+    .franchise-page,
+    .contact-page,
+    .training-page,
+    .about-us,
+    .login-page,
+    .registerd-page,
+    .terms-page-html {
+        margin-top: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-height: 450px;
+        height: auto;
+    }
+
+    .carousel-caption {
+        text-align: center;
+    }
+
+    .carousel-caption h1 {
+        font-size: 24px;
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .multi-column-list {
+        columns: 1;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    #countdown ul {
+        justify-content: center;
+    }
+
+    .thim-register-now-form .title::before {
+        width: 100%;
+        left: 0;
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+/* ==========================================================================
+   THE ULTIMATE HARD OVERFLOW KILLER (AARTI'S FINAL FIX)
+   ========================================================================== */
+
+/* 1. Poori body aur html ko stretch hone se rokna */
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* 2. Kisi bhi outer row ko screen se bahar jaane se rokna */
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+}
+
+/* 3. Saare main sections ko screen ke andar tight pack karna */
+section,
+main,
+footer,
+header,
+.carousel,
+.testimonials,
+.register {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+    /* Baahar nikle hue pixels ko cut kar dega */
+}
+
+/* SYSTEM TESTING CODE - ISSE CHEATING PAKDI JAYEGI */

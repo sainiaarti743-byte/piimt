@@ -1,4 +1,5 @@
+
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/piimt/public_html/
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - export DEPLOYPATH=/home2/piimt/public_html
+    - /bin/cp -R build/* $DEPLOYPATH
