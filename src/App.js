@@ -79,6 +79,8 @@ function App() {
 
       <Foooter />
 
+      
+
       <a
         href="https://wa.me/917300180494?text=Hello,%20I%20want%20to%20know%20more%20about%20the%20courses."
         className="whatsapp-float"
