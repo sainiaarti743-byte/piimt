@@ -52,8 +52,8 @@ const Home = () => {
 
     return (
         <> <SEO
-            title="PIIMT EdTech – Best IT Training Institute in Jaipur & Sikar"
-            description="Learn React JS, Python, Laravel, Web Development and Mobile App Development with placement support."
+            title="PIIMT EdTech | IT Training Institute India — 100+ Courses"
+            description="PIIMT EdTech is a trusted IT training institute in India offering 100+ certified, job-oriented courses with live projects and placement support."
             keywords="IT institute Jaipur, React JS training Jaipur, Python classes Jaipur"
             url="https://piimtedtech.in/"
         />

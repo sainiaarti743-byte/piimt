@@ -10,6 +10,27 @@ const SEO = ({
 
   return (
     <Helmet>
+      <title>PIIMT EdTech | IT Training Institute India — 100+ Courses</title>
+
+      <meta
+        name="description"
+        content="PIIMT EdTech is a trusted IT training institute in India offering 100+ certified, job-oriented courses with live projects and placement support."
+      />
+
+      <meta
+        name="keywords"
+        content="IT training institute India, computer courses India, ISO certified IT institute, job oriented IT courses"
+      />
+
+      <link rel="canonical" href="https://piimtedtech.in/" />
+
+      <meta property="og:title" content="PIIMT EdTech" />
+      <meta
+        property="og:description"
+        content="100+ certified IT courses with placement support."
+      />
+      <meta property="og:url" content="https://piimtedtech.in/" />
+      <meta property="og:type" content="website" />
 
       {/* Primary SEO */}
       <title>{title}</title>

@@ -6,9 +6,9 @@ const InternshipIt = () => {
     return (
         <>
         <SEO
-  title="IT Internship Program"
-  description="Get industry-level IT internship training with live projects."
-  keywords="IT internship Jaipur"
+  title="IT Internship with Certificate India | PIIMT EdTech Training Program"
+  description="PIIMT EdTech offers practical IT internship programs in India with industry exposure, live project work, and certificate. Ideal for students and fresh graduates"
+  keywords="IT internship for freshers India, internship with placement, tech internship Rajasthan"
   url="https://piimtedtech.in/internship-it"
 />
             <div className="training-page course-detail-page">

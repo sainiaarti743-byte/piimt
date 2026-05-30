@@ -5,9 +5,9 @@ const Contact = () => {
   return (
     <>
     <SEO
-  title="Contact PIIMT EdTech"
-  description="Contact PIIMT EdTech for admission and course information."
-  keywords="Contact PIIMT EdTech, IT institute contact"
+  title="Contact PIIMT EdTech | IT Training Institute Admissions & Enquiry"
+  description="Get in touch with PIIMT EdTech for course admissions, batch schedules, and fee details. Visit our Jaipur head office or Sikar centre — or enquire online"
+  keywords="IT training institute contact India, IT course admission Jaipur, IT institute Sikar contact"
   url="https://piimtedtech.in/contact"
 />
       <div className="bg-light min-vh-100">

@@ -5,9 +5,9 @@ const DigitalMarketing = () => {
     return (
         <>
         <SEO
-  title="Digital Marketing Course in Jaipur"
-  description="Learn SEO, Social Media Marketing and Google Ads with practical training."
-  keywords="Digital Marketing course Jaipur, SEO training Jaipur"
+  title="Digital Marketing Course India | SEO, Google Ads, Social Media — PIIMT EdTech"
+  description="Learn digital marketing at PIIMT EdTech — India's certified IT training institute. Covers SEO, Google Ads, social media, content marketing & analytics with placement support."
+  keywords="SEO course India, Google Ads training, social media marketing course, digital marketing with placement"
   url="https://piimtedtech.in/digital-marketing"
 />
             <div className="training-page course-detail-page">

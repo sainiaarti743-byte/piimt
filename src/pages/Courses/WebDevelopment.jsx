@@ -5,9 +5,9 @@ const WebDevelopment = () => {
     return (
         <>
         <SEO
-  title="Web Development Course in Jaipur"
-  description="Learn Full Stack Web Development with live projects and placement support."
-  keywords="Web Development course Jaipur, Full Stack training"
+  title="Web Development Course India | Full Stack Training — PIIMT EdTech"
+  description="Join PIIMT EdTech's web development course in India — covering HTML, CSS, JavaScript, React, Node.js with live projects and placement support."
+  keywords="web development course India"
   url="https://piimtedtech.in/web-development"
 />
 

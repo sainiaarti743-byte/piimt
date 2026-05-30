@@ -6,9 +6,9 @@ const GraphicDesiging = () => {
     return (
         <>
         <SEO
-  title="Graphic Designing Course in Jaipur"
-  description="Learn Photoshop, Illustrator and professional graphic designing."
-  keywords="Graphic designing course Jaipur"
+  title="Graphic Design Course India | Adobe, UI/UX, Motion Graphics — PIIMT EdTech"
+  description="Enrol in PIIMT EdTech's graphic design course in India. Learn Adobe Photoshop, Illustrator, Premiere Pro, UI/UX design with live project work and placement support."
+  keywords=" Adobe Photoshop course India, UI UX design course, motion graphics training, design course with certificate"
   url="https://piimtedtech.in/graphic-desiging"
 />
             <div className="training-page course-detail-page">

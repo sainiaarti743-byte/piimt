@@ -158,9 +158,9 @@ const AllCourses = () => {
     <>
 
     <SEO
-  title="All IT Courses – PIIMT EdTech"
-  description="Browse all IT training courses including React JS, Python, Laravel and Mobile App Development."
-  keywords="All IT courses Jaipur"
+  title="100+ IT Courses with Placement | PIIMT EdTech — IT Training Institute India"
+  description="Explore 100+ certified IT courses at PIIMT EdTech — India's trusted IT training institute. Web development, digital marketing, AI, graphic design & more. All with placement support."
+  keywords="IT courses with placement India"
   url="https://piimtedtech.in/allcourses"
 />
       <div className="training-page">

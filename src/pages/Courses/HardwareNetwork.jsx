@@ -7,9 +7,9 @@ const HardwareNetwork = () => {
 
         <>
         <SEO
-  title="Hardware & Networking Course"
-  description="Professional hardware and networking training with practical labs."
-  keywords="Hardware networking course Jaipur"
+  title="Hardware & Networking Course India — PIIMT EdTech"
+  description="Join PIIMT EdTech's hardware and networking course in India. CCNA fundamentals, network setup, troubleshooting & administration."
+  keywords="CCNA training India, network administration course, computer hardware course certificate"
   url="https://piimtedtech.in/hardware-network"
 />
             <div className="training-page course-detail-page">

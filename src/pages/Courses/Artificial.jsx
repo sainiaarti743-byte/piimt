@@ -6,9 +6,9 @@ const Artificial = () => {
     return (
         <>
         <SEO
-  title="Artificial Intelligence Course"
-  description="Learn AI and machine learning with industry projects."
-  keywords="Artificial Intelligence course Jaipur"
+  title="AI & Machine Learning Course India for Beginners | PIIMT EdTech"
+  description="Start your AI journey with PIIMT EdTech's beginner-friendly AI and machine learning course in India. Python, data science, real projects & placement support."
+  keywords="machine learning course India, Python data science training, artificial intelligence institute India"
   url="https://piimtedtech.in/artificial-intelligence"
 />
             <div className="training-page course-detail-page">
