@@ -120,7 +120,7 @@ const Home = () => {
 
                                         <br />
 
-                                        Jaipur & Sikar's Trusted Institute
+                                         Trusted Institute
                                     </h1>
 
                                     <p
@@ -762,9 +762,6 @@ const Home = () => {
                                 PIIMT EdTech was started with one straightforward belief:
                                 a student who practises what they learn will always outperform
                                 one who only reads about it. Every course at our{" "}
-                                <span className="text-warning fw-semibold">
-                                    Jaipur and Sikar
-                                </span>{" "}
                                 centres is built around that idea.
                             </p>
 
