@@ -30,9 +30,9 @@ const Foooter = () => {
                         <div className="col-lg-3 col-12">
                             <h5 className="fw-bold mb-3">Contact</h5>
                             <ul className="widget p-0">
-                                <li className="small list-unstyled"><span><i className="bi bi-geo-alt-fill"></i></span>  Head Office — Jaipur  Nursery Circle Vaishali Nagar Jaipur (302021)
+                                <li className="small list-unstyled"><span><i className="bi bi-geo-alt-fill"></i></span>  <span className="fs-6">Head Office</span>— Jaipur  Nursery Circle Vaishali Nagar Jaipur (302021)
                                 </li>
-                                <li className="small list-unstyled"><span><i className="bi bi-geo-alt-fill"></i></span>   Registered office:  Shiv Nagar, NH52, Gordhanpura, Palsana
+                                <li className="small list-unstyled"><span><i className="bi bi-geo-alt-fill"></i></span>  <span className="fs-6">Registered office:</span>Shiv Nagar, NH52, Gordhanpura, Palsana
                                 Sikar, Rajasthan – 332402
                                 </li>
                                 <li className="small list-unstyled"><span><a href="tel:+91 7300180494"><i className="bi bi-telephone"></i> +91 7300180494 </a></span>

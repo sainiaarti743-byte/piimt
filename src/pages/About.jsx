@@ -43,14 +43,14 @@ const About = () => {
                                 Head Office — Jaipur
                             </h5>
                             <p className="mb-0 text-muted fs-5" style={{ lineHeight: '1.5' }}>
-                               
+
                                 Nursery Circle Vaishali Nagar Jaipur <br /> Raj. 302021
                             </p>
                         </div>
 
                         <div className="col-md-6 p-4" style={{ backgroundColor: '#f4f7fa' }}>
                             <h5 className="fw-bold mb-2" style={{ color: '#1a3761' }}>
-                               Registered office
+                                Registered office
                             </h5>
                             <p className="mb-0 text-muted fs-5" style={{ lineHeight: '1.5' }}>
                                 Shiv Nagar, NH52, Gordhanpura, Palsana<br />
@@ -211,7 +211,8 @@ const About = () => {
                             {/* Q2 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
                                 <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q2. Where exactly are your two centres?</h5>
-                                <p className="fs-5 text-muted mb-0 mt-2">Head office: D-50, Hanuman Nagar, Vaishali Nagar, Jaipur, Rajasthan – 302019. Sikar centre: Shiv Nagar, NH52, Gordhanpura, Palsana, Sikar, Rajasthan – 332402. If you are between both cities, either works — students switch between them when needed.</p>
+                                <p className="fs-5 text-muted mb-0 mt-2">   Head Office —  Nursery Circle Vaishali Nagar Jaipu Raj. 302021. ,   Registered office:  Shiv Nagar, NH52, Gordhanpura, Palsana
+                                    Sikar, Rajasthan – 332402. If you are between both cities, either works — students switch between them when needed.</p>
                             </div>
 
                             {/* Q3 */}
