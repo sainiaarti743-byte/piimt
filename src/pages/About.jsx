@@ -44,7 +44,7 @@ const About = () => {
                             </h5>
                             <p className="mb-0 text-muted fs-5" style={{ lineHeight: '1.5' }}>
 
-                                Nursery Circle Vaishali Nagar Jaipur <br /> Raj. 302021
+                               Near JECRC University, vidhani ramachandrapura Jaipur 302021
                             </p>
                         </div>
 
@@ -53,8 +53,7 @@ const About = () => {
                                 Registered office
                             </h5>
                             <p className="mb-0 text-muted fs-5" style={{ lineHeight: '1.5' }}>
-                                Shiv Nagar, NH52, Gordhanpura, Palsana<br />
-                                Sikar, Rajasthan – 332402
+                               Jat Bazar, NH 52, Reengus Sikar 332404
                             </p>
                         </div>
                     </div>
