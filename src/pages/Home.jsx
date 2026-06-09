@@ -576,7 +576,7 @@ const Home = () => {
 
 
 
-            <section
+            {/* <section
                 className="py-5 text-center text-white position-relative overflow-hidden"
                 style={{
                     background:
@@ -585,7 +585,7 @@ const Home = () => {
             >
                 <div className="container">
 
-                    {/* Heading */}
+                
                     <div className="mb-5">
 
                         <span
@@ -624,7 +624,7 @@ const Home = () => {
                         />
                     </div>
 
-                    {/* Stats Box */}
+              
                     <div className="row justify-content-center mb-5">
                         <div className="col-lg-11">
 
@@ -639,7 +639,7 @@ const Home = () => {
 
                                 <div className="row g-4">
 
-                                    {/* Stat 1 */}
+                                
                                     <div className="col-6 col-md-3 border-end border-secondary border-opacity-25">
                                         <div
                                             className="fw-bold text-warning"
@@ -661,7 +661,7 @@ const Home = () => {
                                         </small>
                                     </div>
 
-                                    {/* Stat 2 */}
+                                   
                                     <div className="col-6 col-md-3 border-md-end border-secondary border-opacity-25">
                                         <div
                                             className="fw-bold text-warning"
@@ -683,7 +683,7 @@ const Home = () => {
                                         </small>
                                     </div>
 
-                                    {/* Stat 3 */}
+                                   
                                     <div className="col-6 col-md-3 border-end border-secondary border-opacity-25">
                                         <div
                                             className="fw-bold text-warning"
@@ -705,7 +705,7 @@ const Home = () => {
                                         </small>
                                     </div>
 
-                                    {/* Stat 4 */}
+                                 
                                     <div className="col-6 col-md-3">
                                         <div
                                             className="fw-bold text-warning"
@@ -729,7 +729,7 @@ const Home = () => {
 
                                 </div>
 
-                                {/* Bottom Text */}
+                             
                                 <div className="mt-4 pt-3 border-top border-secondary border-opacity-25">
                                     <p
                                         className="mb-0 text-white"
@@ -748,7 +748,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Content */}
+                
                     <div className="row justify-content-center">
                         <div className="col-lg-10">
 
@@ -804,7 +804,7 @@ const Home = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             <section className="py-5 bg-white">
                 <div className="container py-4">

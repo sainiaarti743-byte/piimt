@@ -152,7 +152,7 @@ const About = () => {
             </section>
 
             {/* --- Section 5: Certification and Standards --- */}
-            <section className="py-5 bg-white">
+            {/* <section className="py-5 bg-white">
                 <div className="container">
                     <h2 className="fw-bold mb-3" style={{ color: '#1a3761', fontSize: '2rem' }}>
                         On Certification and Standards
@@ -166,7 +166,7 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* --- Section 6: Future and Scale --- */}
             <section className="py-5 bg-light">
@@ -202,33 +202,33 @@ const About = () => {
                     <div className="row g-4">
                         <div className="col-12">
                             {/* Q1 */}
-                            <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
+                            {/* <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
                                 <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q1. What is PIIMT EdTech and where is it based?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">PIIMT EdTech is a job-oriented IT training institute based in Jaipur, with a second centre in Sikar. We run 100+ certified courses across six domains — web development, digital marketing, AI and machine learning, graphic design, hardware networking, and business skills. We are ISO 9001:2008 certified and currently expanding across India.</p>
-                            </div>
+                            </div> */}
 
                             {/* Q2 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q2. Where exactly are your two centres?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q1. Where exactly are your two centres?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">   Head Office —  Nursery Circle Vaishali Nagar Jaipu Raj. 302021. ,   Registered office:  Shiv Nagar, NH52, Gordhanpura, Palsana
                                     Sikar, Rajasthan – 332402. If you are between both cities, either works — students switch between them when needed.</p>
                             </div>
 
                             {/* Q3 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q3. Are your trainers actually from the industry or just teaching professionals?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q2. Are your trainers actually from the industry or just teaching professionals?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">Everyone who teaches at PIIMT has held a real job in the field they train. No exceptions. We recruit trainers for what they have done, not just what they know. The difference shows up in the classroom — they teach from experience, not from a curriculum document.</p>
                             </div>
 
                             {/* Q4 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q4. What does ISO 9001:2008 mean for a student practically?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q3. What does ISO 9001:2008 mean for a student practically?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">It means an independent body has audited our processes and confirmed they meet international standards. For you, the practical result is a certificate that carries weight with employers outside Rajasthan. Our students have used PIIMT qualifications to land roles in Bangalore, Pune, Mumbai, and Delhi — the ISO backing is part of what makes that possible.</p>
                             </div>
 
                             {/* Q5 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q5. How does placement support actually work at PIIMT?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q4. How does placement support actually work at PIIMT?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">We build an individual roadmap for your technical portfolios and resumes. Instead of sharing random sheets of cold contacts, we sync you directly with live corporate recruitment drives that actively seek out PIIMT graduates. The numbers matter to us — not just as a marketing metric, but as a measure of whether the training is working.</p>
                             </div>
 
