@@ -5,13 +5,12 @@ const About = () => {
     return (
         <>
 
-            <SEO
-                title="About PIIMT EdTech | IT Training Institute India"
-                description="Learn about PIIMT EdTech — an IT training institute in India with 100+ courses, industry trainers, and a mission to bring quality tech education pan India."
-                keywords="about PIIMT EdTech, IT institute Rajasthan, pan India IT training, IT trainer jobs"
-                url="https://piimtedtech.in/about"
-            />
-
+        <SEO
+  title="About PIIMT EdTech | ISO Certified IT Institute Jaipur"
+  description="PIIMT EdTech is an ISO certified IT training institute in Jaipur with experienced faculty, live projects, and 100% placement assistance since 2010."
+  keywords="about PIIMT EdTech, ISO certified IT institute Jaipur, best IT institute Rajasthan"
+  url="https://piimtedtech.in/about"
+/>
 
 
             <section className="py-5">
@@ -234,19 +233,19 @@ const About = () => {
 
                             {/* Q6 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q6. I have no IT background at all. Can I still join?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q5. I have no IT background at all. Can I still join?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">Yes. A lot of our best-placed students had zero technical background before they joined — straight out of Class 12, career switchers in their late twenties, people who had never opened a code editor. Our beginner batches are designed for exactly that starting point. The only requirement is that you take the work seriously.</p>
                             </div>
 
                             {/* Q7 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q7. Is PIIMT EdTech planning to open centres in other cities?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q6. Is PIIMT EdTech planning to open centres in other cities?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">That is exactly the plan. Pan India expansion is not a line we added to the website to sound ambitious — it is the direction the whole operation is built toward. We are working on the trainer network, quality controls, and delivery model that will let us open in other cities without compromising on what makes the Jaipur and Sikar centres work. If you want to stay updated, follow us at www.piimtedtech.in.</p>
                             </div>
 
                             {/* Q8 */}
                             <div className="mb-4 p-4 border-start border-4" style={{ borderColor: '#e0533c', backgroundColor: '#fdfdfe' }}>
-                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q8. I am from a city where PIIMT is not yet present. What can I do?</h5>
+                                <h5 className="fw-bold" style={{ color: '#1a3761' }}>Q7. I am from a city where PIIMT is not yet present. What can I do?</h5>
                                 <p className="fs-5 text-muted mb-0 mt-2">For now, both our centres are open to students from anywhere in Rajasthan and beyond. Some students do travel and stay locally for the duration of their course — it is a few months, and the outcome justifies it for many people. We are also building out a roadmap for hybrid delivery for cities we cannot yet reach physically. The best thing to do right now is get in touch and tell us where you are.</p>
                             </div>
                         </div>
